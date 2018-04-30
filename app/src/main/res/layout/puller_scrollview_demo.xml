@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackB"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#c5c3c3"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="网页由y.qq.com提供"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#c6c3c3"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="qq浏览器X5内核提供技术支持"/>
+    </RelativeLayout>
+
+    <com.example.rtyui.androidteach.PullerScroll.PullerScrollView
+        android:id="@+id/lst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#e8c6c6"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#d99999"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#a9df63"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#6de3b4"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#3ef04a"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#5a66eb"
+                android:gravity="center"
+                android:text="我的好友" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#eb3f4d"
+                android:gravity="center"
+                android:text="我的好友" />
+        </LinearLayout>
+
+    </com.example.rtyui.androidteach.PullerScroll.PullerScrollView>
+</RelativeLayout>
