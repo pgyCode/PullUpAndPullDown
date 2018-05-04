@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PullRefreshListView</string>
+    <string name="word">我最牛逼</string>
+    <string name="sentence">我是%s%s%d院院长,我的身高是%.2f，%s</string>
 </resources>

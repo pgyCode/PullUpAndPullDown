@@ -17,7 +17,7 @@ public class PullerScrollDemo extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.puller_scrollview_demo);
+        setContentView(R.layout.puller_pullerscrollview_demo);
 
         LinearLayout linearLayout = (LinearLayout) ((ScrollView)findViewById(R.id.lst)).getChildAt(0);
         final View view = LayoutInflater.from(this).inflate(R.layout.item, null, false);

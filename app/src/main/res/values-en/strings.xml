@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PullRefreshListView</string>
+    <string name="word">i am the diaost</string>
+    <string name="sentence">i am %s%s%d leader,my tall is %.2f，%s</string>
+</resources>
