@@ -60,7 +60,7 @@ public class PullRefreshListView extends ListView {
         if (can){
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_MOVE:
-                    System.out.println(getFirstVisiblePosition() + " " + currentHeight);
+                    System.out.println(getFirstVisiblePosition() + " " + currentHeight + " " + lastPosition);
                     if (getFirstVisiblePosition() == 0) {
                         if (lastPosition != 0) {
                             float temp = ev.getY() - lastPosition;
@@ -74,11 +74,11 @@ public class PullRefreshListView extends ListView {
                                     headStatu1();
                                 else
                                     headStatu0();
+                                return true;
                             } else {
                                 currentHeight = 0;
                                 setHeaderHeight();
                             }
-                            return true;
                         } else {
                             lastPosition = ev.getY();
                         }

@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ public class PullerRefreshListDemo extends Activity{
         //设置适配器
         pullRefreshListView.setAdapter(new MyAdapter());
 
-        //设置刷新周期
+        //设置刷新周期事件
         pullRefreshListView.setPullRefreshInterface(new PullRefreshInterface() {
             @Override
             public void beforeLoad_PullRefresh() {
@@ -54,6 +55,14 @@ public class PullerRefreshListDemo extends Activity{
                     Toast.makeText(PullerRefreshListDemo.this, "加载成功", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(PullerRefreshListDemo.this, "加载失败", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //设置点击时间
+        pullRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(PullerRefreshListDemo.this, "我是" + i + "我被选中了", Toast.LENGTH_SHORT).show();
             }
         });
 
