@@ -26,14 +26,17 @@ public class PullerRefreshListDemo extends Activity{
 
         pullRefreshListView = findViewById(R.id.lst);
 
+        //设置适配器
         pullRefreshListView.setAdapter(new MyAdapter());
 
+        //设置刷新周期
         pullRefreshListView.setPullRefreshInterface(new PullRefreshInterface() {
             @Override
             public void beforeLoad_PullRefresh() {
                 Toast.makeText(PullerRefreshListDemo.this, "开始之前", Toast.LENGTH_SHORT).show();
             }
 
+            //沉睡五秒 并返回一个随机正负值 表示成功失败
             @Override
             public boolean load_PullRefresh() {
                 try {
@@ -53,6 +56,8 @@ public class PullerRefreshListDemo extends Activity{
                     Toast.makeText(PullerRefreshListDemo.this, "加载失败", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //测试添加头部viewpager
         initViewpager();
     }
 

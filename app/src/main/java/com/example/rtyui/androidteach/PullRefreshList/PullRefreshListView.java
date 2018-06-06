@@ -24,7 +24,7 @@ import com.example.rtyui.androidteach.R;
 
 public class PullRefreshListView extends ListView {
 
-    private final int HEADER_DP = 100;
+    private final int HEADER_DP = 60;
 
     private View header;
     private float currentHeight = 0;
@@ -39,7 +39,7 @@ public class PullRefreshListView extends ListView {
     public PullRefreshListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initHead(context);
-        addHeaderView(header, null, true);
+        addHeaderView(header, null, false);
         setHeaderHeight();
         setVerticalScrollBarEnabled(false);
         setPadding(getPaddingLeft(), getPaddingTop() -1,  getPaddingRight(), getPaddingBottom());
@@ -50,14 +50,13 @@ public class PullRefreshListView extends ListView {
         can = true;
     }
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-    }
-
     //处理touch事件
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        if (currentHeight == 0)
+            setSelector(R.drawable.item);
+        else
+            setSelector(R.drawable.item_out);
         if (can){
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_MOVE:
@@ -87,16 +86,19 @@ public class PullRefreshListView extends ListView {
                     break;
                 case MotionEvent.ACTION_UP:
                     lastPosition = 0;
-                    if (currentHeight > dp2px(HEADER_DP)){
-                        new MyAsyncTask().execute();
-                        headStatu2();
-                        can = false;
-                    }
-                    else if (currentHeight > 0){
-                        replyView(currentHeight, 0);
-                    }else{
-                        currentHeight = 0;
-                        setHeaderHeight();
+                    if (currentHeight != 0){
+                        if (currentHeight > dp2px(HEADER_DP)){
+                            new MyAsyncTask().execute();
+                            headStatu2();
+                            can = false;
+                        }
+                        else if (currentHeight > 0){
+                            replyView(currentHeight, 0);
+                        }else{
+                            currentHeight = 0;
+                            setHeaderHeight();
+                        }
+                        return true;
                     }
                     break;
             }
